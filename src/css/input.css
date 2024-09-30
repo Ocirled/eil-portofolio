@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* .tab_main_active {
+    @apply text-primary;
+  } */
+}
+
+@layer base {
+  :root {
+    --primary-hue: 352;
+    --color-primary: var(--primary-hue), 75%, 60%;
+    --dark-color-lightness: 10%;
+    --light-color-lightness: 92%;
+    --dim-color-lightness: 17%;
+    --color-dark: 252, 30%, var(--dark-color-lightness);
+    --color-light: 252, 30%, var(--light-color-lightness);
+    --color-dim: 252, 30%, var(--dim-color-lightness);
+  }
+}
+
+#check:checked ~ .navbar-md-container label #arrow {
+  transform: rotate(180deg);
+}
+
+#check:checked ~ .navbar-md-container {
+  max-width: 60px;
+}
+
+#check:checked ~ .navbar-md-container .navbar li a p,
+#check:checked ~ .navbar-md-container .change-color-container li a p {
+  transform: scale(0);
+}
+
+#navbar-check:checked ~ .backdrop-blur-lg {
+  height: 300px;
+}
+#navbar-check:checked ~ .backdrop-blur-lg .menu-container nav ul {
+  display: block;
+}
+
+#navbar-check:checked ~ .navbar-container .menu-container span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: right;
+}
+#navbar-check:checked ~ .navbar-container .menu-container span:nth-child(2) {
+  width: 0;
+}
+#navbar-check:checked ~ .navbar-container .menu-container span:nth-child(3) {
+  transform: translate(-50%, -80%) rotate(45deg);
+  transform-origin: right;
+}
+
+/* Color theme active border */
+.active-color {
+  @apply border-[5px] border-white;
+}
+
+.active-background {
+  @apply border border-primary;
+}
+
+#parallax .shape-1 {
+  top: 4.5% !important;
+  left: 0px !important;
+}
+#parallax .shape-2 {
+  top: 24% !important;
+  left: 80% !important;
+}
+#parallax .shape-3 {
+  top: 0% !important;
+  left: 45% !important;
+}
+#parallax .shape-4 {
+  top: 2.4% !important;
+  left: 70% !important;
+}
+#parallax .shape-5 {
+  top: 30% !important;
+  left: -10% !important;
+}
+#parallax .shape-6 {
+  top: 50% !important;
+  left: 65% !important;
+}
+#parallax .shape-7 {
+  top: 40% !important;
+  left: 25% !important;
+}
+#parallax .shape-8 {
+  top: 10% !important;
+  left: 20% !important;
+}
+
+/* About */
+.tab_item[data-content] {
+  display: none;
+}
+
+.tab_active[data-content] {
+  display: block;
+}
+
+/* End of about */
+
+/* Hover, muncul detail kecil */
+.borderBottom {
+  @apply after:content-[''] after:block after:w-full after:bg-dark after:h-[2px] after:scale-0 hover:after:scale-100 after:duration-300;
+}

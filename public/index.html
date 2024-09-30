@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eiL</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- My Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Rubik&display=swap" rel="stylesheet" />
+
+    <!-- Swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body class="font-rubik bg-light" id="#body">
+    <!-- Navbar -->
+    <input type="checkbox" id="navbar-check" class="hidden invisible" />
+    <div class="navbar-container flex fixed justify-between px-4 py-0 right-0 top-0 left-0 h-[70px] backdrop-blur-lg bg-gray/40 duration-500 z-50">
+      <h1 class="after:content-['.'] after:ml-0.5 after:text-primary block font-semibold tracking-wide text-4xl mt-4 lg:text-[44px]">eiL</h1>
+      <div class="menu-container mt-7 mr-4 h-[30px] md:hidden">
+        <div class="flex gap-3 relative">
+          <label for="navbar-check" class="flex flex-col justify-between h-[17px]">
+            <span class="block w-[20px] h-[2px] bg-dim duration-300"></span>
+            <span class="block w-[10px] h-[2px] bg-dim duration-300"></span>
+            <span class="block w-[20px] h-[2px] bg-dim duration-300"></span>
+          </label>
+          <div class="absolute -top-1 -left-10" id="change-color">
+            <i class="bx bx-palette text-2xl"></i>
+          </div>
+        </div>
+        <nav class="fixed top-[65px] right-0 left-0 overflow-hidden">
+          <ul class="w-fit mx-auto my-[40px] text-center hidden">
+            <li class="mb-3">
+              <a href="#about" class="page-scroll active hover:bg-primary hover:text-white rounded-full px-4 py-2">About</a>
+            </li>
+            <li class="mb-3">
+              <a href="#experience" class="page-scroll active hover:bg-primary hover:text-white rounded-full px-4 py-2">Experience</a>
+            </li>
+            <li class="mb-3">
+              <a href="#skills" class="page-scroll active hover:bg-primary hover:text-white rounded-full px-4 py-2">Skills</a>
+            </li>
+            <li class="mb-3">
+              <a href="#projects" class="page-scroll active hover:bg-primary hover:text-white rounded-full px-4 py-2">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="md:block hidden">
+        <input type="checkbox" id="check" class="hidden invisible" />
+        <div class="navbar-md-container w-[200px] min-h-[100%] bg-white shadow-normal fixed right-0 z-[1] duration-500 ease-in-out">
+          <label for="check">
+            <i
+              class="bx bx-chevron-right absolute w-[35px] h-[35px] lg:w-[50px] lg:h-[50px] -left-[15px] lg:-left-[24px] text-[35px] lg:text-[50px] bg-white shadow-normal text-center leading-[35px] lg:leading-[50px] bottom-[120px] lg:bottom-[100px] rounded-full text-primary duration-300 z-20"
+              id="arrow"
+            ></i>
+          </label>
+          <div class="imgbox relative h-[120px] w-[100%] mb-[20px] -z-[1]"><img src="/img/Book and Coffee.jpg" alt="" class="w-[100%] h-[100%] object-cover p-2 rounded-xl" /></div>
+
+          <ol class="navbar w-[100%] py-0 px-[10px] relative">
+            <div class="">
+              <li class="mb-[20px]">
+                <a href="#about" class="page-scroll flex rounded-[10px] hover:bg-primary hover:text-white duration-300 py-[5px] px-1"
+                  ><i class="bx bx-user-pin text-3xl ml-[1.5px] mt-1 lg:mt-[6px]"></i>
+                  <p class="leading-[32px] ml-6 text-lg lg:text-xl lg:leading-[40px] scale-100 origin-left">About</p></a
+                >
+              </li>
+              <li class="mb-[20px]">
+                <a href="#experience" class="page-scroll flex rounded-[10px] hover:bg-primary hover:text-white duration-300 py-[5px] px-1"
+                  ><i class="bx bxs-graduation text-3xl ml-[1.5px] mt-1 lg:mt-[5px]"></i>
+                  <p class="leading-[32px] ml-6 text-lg lg:text-xl lg:leading-[40px] scale-100 origin-left">Experience</p></a
+                >
+              </li>
+              <li class="mb-[20px]">
+                <a href="#skills" class="page-scroll flex rounded-[10px] hover:bg-primary hover:text-white duration-300 py-[5px] px-1"
+                  ><i class="bx bx-cube-alt text-3xl ml-[1.5px] mt-[0.5px] lg:mt-[5px]"></i>
+                  <p class="leading-[32px] ml-6 text-lg lg:text-xl lg:leading-[40px] scale-100 origin-left">Skills</p></a
+                >
+              </li>
+              <li class="mb-[20px]">
+                <a href="#projects" class="page-scroll flex rounded-[10px] hover:bg-primary duration-300 hover:text-white py-[5px] px-1"
+                  ><i class="bx bxs-layout text-3xl ml-[1.5px] mt-[0.5px] lg:mt-[5px]"></i>
+                  <p class="leading-[32px] ml-6 text-lg lg:text-xl lg:leading-[40px] scale-100 origin-left">Projects</p></a
+                >
+              </li>
+              <div class="change-color-container relative w-[100%] h-[140px]">
+                <ol class="absolute bottom-1 w-[100%]">
+                  <li>
+                    <a href="#" id="change-color" class="flex hover:bg-primary duration-300 rounded-[10px] hover:text-white py-[5px] px-1"
+                      ><i class="bx bx-palette text-3xl ml-[1px] mt-[0.5px] lg:mt-[2px]"></i>
+                      <p class="h-[32px] leading-[32px] text-[16px] lg:text-xl lg:leading-[32px] ml-3 scale-100 origin-left">Change Color</p></a
+                    >
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- End of Navbar -->
+    <!-- Color theme -->
+    <div class="theme-custom bg-darkWithAlpha fixed top-0 bottom-0 left-0 right-0 z-50 hidden justify-center items-center">
+      <div class="theme-container bg-white p-4 rounded-xl text-center w-[90%] md:w-[500px] lg:h-[400px] relative lg:flex lg:flex-col lg:justify-evenly">
+        <div class="">
+          <h1 class="font-bold text-2xl lg:text-3xl">Customize your view</h1>
+          <p class="text-sm lg:text-lg">Manage your own color and background.</p>
+        </div>
+        <div class="color-theme-custom">
+          <h1 class="mt-5 mb-2 font-semibold text-xl lg:text-2xl">Color</h1>
+          <div class="w-[100%] bg-light h-fit rounded-2xl p-3">
+            <div class="choose-color flex justify-between">
+              <span class="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] bg-purple block rounded-full cursor-pointer"></span>
+              <span class="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] bg-yellow block rounded-full cursor-pointer"></span>
+              <span class="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] bg-red block rounded-full cursor-pointer active-color"></span>
+              <span class="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] bg-green block rounded-full cursor-pointer"></span>
+              <span class="w-[25px] h-[25px] lg:w-[30px] lg:h-[30px] bg-blue block rounded-full cursor-pointer"></span>
+            </div>
+          </div>
+        </div>
+        <div class="background-theme-custom">
+          <h1 class="mt-5 mb-2 font-semibold text-xl lg:text-2xl">Background</h1>
+          <div class="flex justify-between">
+            <div class="flex p-4 justify-evenly items-center bg-lightNoChange bg1 rounded-xl w-[115px] lg:w-[125px] cursor-pointer active-background">
+              <div class="w-[20px] h-[20px] lg:w-[25px] lg:h-[25px] rounded-full bg-lightNoChange border"></div>
+              <p class="font-semibold lg:text-lg">Light</p>
+            </div>
+            <div class="flex p-4 justify-evenly items-center bg-dim bg2 rounded-xl w-[115px] lg:w-[125px] cursor-pointer">
+              <div class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] rounded-full bg-dim border border-white"></div>
+              <p class="font-semibold lg:text-lg text-white">Dim</p>
+            </div>
+            <div class="flex p-4 justify-evenly items-center bg-darkNoChange bg3 rounded-xl w-[115px] lg:w-[125px] cursor-pointer">
+              <div class="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] rounded-full bg-darkNoChange border border-white"></div>
+              <p class="font-semibold lg:text-lg text-white">Dark</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Color theme -->
+    <!-- Home Section -->
+    <div class="home-container text-center mt-[150px]">
+      <div class="w-[100%] h-[100%] absolute overflow-hidden -z-50" id="parallax">
+        <div class="shape-1 absolute" data-depth="0.10">
+          <img src="/img/shape/shape-1.png" alt="" />
+        </div>
+        <div class="shape-2 absolute" data-depth="0.30">
+          <img src="/img/shape/shape-2.png" alt="" />
+        </div>
+        <div class="shape-3 absolute hidden invisible lg:visible" data-depth="0.10">
+          <img src="/img/shape/shape-3.png" alt="" />
+        </div>
+        <div class="shape-4 absolute" data-depth="0.30">
+          <img src="/img/shape/shape-4.png" alt="" />
+        </div>
+        <div class="shape-5 absolute" data-depth="0.15">
+          <img src="/img/shape/shape-5.png" alt="" />
+        </div>
+        <div class="shape-6 absolute" data-depth="0.50">
+          <img src="/img/shape/shape-6.png" alt="" />
+        </div>
+        <div class="shape-7 absolute hidden invisible lg:visible" data-depth="0.60">
+          <img src="/img/shape/shape-4.png" alt="" />
+        </div>
+        <div class="shape-8 absolute hidden invisible lg:visible" data-depth="0.5">
+          <img src="/img/shape/shape-2.png" alt="" />
+        </div>
+      </div>
+      <img src="/img/Foto Profil.jpg" alt="Conan Photo" class="w-[200px] h-[200px] lg:w-[250px] lg:h-[250px] rounded-full border border-gray mx-auto object-cover object-top" data-aos="fade-down" />
+      <div class="">
+        <h2 class="text-2xl mt-3 text-dark lg:text-[40px]">Delrico Lie</h2>
+        <h3 class="text-lg mt-2 text-dark lg:text-2xl" data-aos="fade-right">I'm a <span class="text-primary">Front End Developer</span></h3>
+        <div class="social-media mt-5 flex w-[110px] lg:w-[130px] justify-between mx-auto">
+          <a href="https://www.instagram.com/delricoo_?igsh=Y2Q1aGhpYWY0OGNl" target="_blank"> <i class="bx bxl-instagram hover:text-primary duration-300 text-2xl lg:text-3xl text-dark" data-aos="fade-down" data-aos-duration="1000"></i></a>
+          <a href="https://www.linkedin.com/in/delrico-lie-8715b7284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
+            ><i class="bx bxl-linkedin hover:text-primary duration-300 text-2xl lg:text-3xl text-dark" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"></i
+          ></a>
+          <a href="https://www.facebook.com/share/shu8PXSfRn1HgaNk/?mibextid=qi2Omg" target="_blank"
+            ><i class="bx bxl-facebook-circle hover:text-primary duration-300 text-2xl lg:text-3xl text-dark" data-aos="fade-down" data-aos-delay="400" data-aos-duration="1000"></i
+          ></a>
+        </div>
+        <div class="rounded-full mt-8 w-fit mx-auto px-6 lg:px-7 py-2 lg:py-4 bg-primary hover:animate-shock text-white font-semibold lg:text-xl" data-aos="fade-up" data-aos-duration="1200">Download CV</div>
+      </div>
+    </div>
+    <!-- End of Home Section -->
+    <!-- About -->
+    <div class="about-container mt-[200px] p-4 lg:p-8" id="about">
+      <div class="">
+        <img src="/img/Books.jpg" alt="" class="h-[400px] w-[100%] lg:w-[90%] lg:mx-auto object-cover object-[20% 75%] mb-5" data-aos="zoom-in" data-aos-duration="500" />
+      </div>
+      <h2 class="text-2xl lg:text-[30px] font-bold mb-[7px] border-b-2 border-primary w-[120px] lg:w-[150px] pb-1 relative text-dark">About Me <span class="absolute -bottom-2 -right-2 w-[35px] h-[2px] bg-dark rounded-sm"></span></h2>
+      <blockquote class="text-lg lg:text-xl mb-1 mt-5 font-semibold text-dark" data-aos="fade-right" data-aos-duration="1000">The life start when you focus on your self.</blockquote>
+      <p class="text-dark lg:text-[16px] lg:max-w-[900px]">
+        Hellooo, I'm Delrico. I was born in Pematangsiantar, Sumatera Utara. I'm currently studying at University of Sumatera Utara (USU), my major is Information Technology. Besides that, I also like to playing music, do some exercise,
+        reading books and of course coding.
+      </p>
+      <div class="tabs_btn mt-5 mb-4 flex justify-between gap-4 w-fit relative">
+        <div class="marker absolute w-[25%] h-[2px] bg-primary -bottom-1 rounded-md left-0 duration-500"></div>
+        <span class="tab_main_active font-semibold relative text-dark lg:text-lg" data-target="#education">Education </span>
+        <span class="font-semibold text-dark lg:text-lg" data-target="#noneduskill">Non-Education-Skill</span>
+        <span class="font-semibold text-dark lg:text-lg" data-target="#award">Award</span>
+      </div>
+      <div class="tab_content">
+        <div class="tab_item tab_active" data-content id="education">
+          <p class="p-4">
+            <span class="font-semibold text-dark relative lg:text-xl">SMA Swasta Sultan Agung <span class="text-xl lg:text-3xl absolute -top-[5px] -right-[90px] lg:-right-[140px] w-[80px] lg:w-[125px]">- 2021</span></span>
+            <span class="block text-dark lg:text-xl">My major is Science</span>
+          </p>
+          <p class="p-4">
+            <span class="font-semibold text-dark relative lg:text-xl">University of Sumatera Utara (USU)<span class="text-xl lg:text-3xl absolute -top-[5px] -right-[90px] lg:-right-[140px] w-[80px] lg:w-[125px]">- 2024</span></span>
+            <span class="block text-dark lg:text-xl">My major is Information Technology</span>
+          </p>
+        </div>
+        <div class="tab_item" data-content id="noneduskill">
+          <p class="p-4">
+            <span class="font-semibold text-dark lg:text-xl">Speak Mandarin Language</span>
+            <span class="block text-dark lg:text-xl">Has taught on HSK 2 & 4</span>
+          </p>
+        </div>
+        <div class="tab_item" data-content id="award">
+          <p class="p-4">
+            <span class="font-semibold text-dark lg:text-xl">I don't have any award</span>
+            <span class="block text-dark lg:text-xl">I will get it as soon as possible.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End of About -->
+    <!-- Experience -->
+    <div class="p-4 lg:p-8 mt-[150px]" id="experience">
+      <h2 class="text-2xl lg:text-[30px] font-bold mb-[7px] border-b-2 border-primary w-[140px] lg:w-[170px] pb-1 relative text-dark">Experience<span class="absolute -bottom-2 -right-2 w-[35px] h-[2px] bg-dark rounded-sm"></span></h2>
+      <div class="lg:flex items-center">
+        <div class="mt-[40px] rounded-lg p-4 bg-light max-w-[500px]">
+          <div class="p-4 border-l-2 border-dark relative">
+            <div class="w-[14px] lg:w-[22px] h-[14px] lg:h-[22px] rounded-full absolute -left-[8px] lg:-left-[12px] -top-[8px] bg-primary" data-aos="fade-right"></div>
+            <h4 class="text-sm text-dark lg:text-xl" data-aos="fade-up" data-aos-duration="700">2023 - Present</h4>
+            <h2 class="font-semibold mt-2 text-lg text-dark lg:text-xl" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Front End Developer</h2>
+            <p class="text-dark lg:text-xl">I started learning about websites when I was in grade 11, I was feel bored and wanted to try something new. Until now I'm at the stage of exploring JavaScript.</p>
+          </div>
+          <div class="p-4 border-l-2 border-dark relative">
+            <div class="w-[14px] lg:w-[22px] h-[14px] lg:h-[22px] rounded-full absolute -left-[8px] lg:-left-[12px] -top-[8px] bg-primary" data-aos="fade-right"></div>
+            <h4 class="text-sm text-dark lg:text-xl" data-aos="fade-up" data-aos-duration="700">2023 - 2024</h4>
+            <h2 class="font-semibold mt-2 text-lg text-dark lg:text-xl" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Part of Generasi Muda Vihara Samiddha Bhagya</h2>
+            <p class="text-dark lg:text-xl">On GMVSB I was member of the Media Communication section. I was assigned to make YouTube live. I have also been an MC for games events.</p>
+          </div>
+          <div class="p-4 border-l-2 border-dark relative">
+            <div class="w-[14px] lg:w-[22px] h-[14px] lg:h-[22px] rounded-full absolute -left-[8px] lg:-left-[12px] -top-[8px] bg-primary" data-aos="fade-right"></div>
+            <h4 class="text-sm lg:text-xl text-dark" data-aos="fade-up" data-aos-duration="700">2024 - Present</h4>
+            <h2 class="font-semibold mt-2 text-lg lg:text-xl text-dark" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Part of Keluarga Mahasiswa Buddhis USU 2024</h2>
+            <p class="text-dark lg:text-xl">Started new journey as a new member on KMB USU 2024.</p>
+          </div>
+        </div>
+        <div class="swiper w-[350px] h-[230px] mt-4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="rounded-xl overflow-hidden">
+                <div class="hover:scale-125 duration-300 w-[350px] h-[230px]">
+                  <img src="/img/experience/FE.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="rounded-xl overflow-hidden">
+                <div class="hover:scale-125 duration-300 w-[350px] h-[230px]">
+                  <img src="/img/experience/GMVSB.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="rounded-xl overflow-hidden">
+                <div class="hover:scale-125 duration-300 w-[350px] h-[230px]">
+                  <img src="/img/experience/KMB USU.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of experience -->
+    <!-- Skill -->
+    <div class="p-4 lg:p-8 mt-[150px]" id="skills">
+      <h2 class="text-2xl lg:text-[30px] font-bold mb-[7px] border-b-2 border-primary w-[70px] lg:w-[85px] pb-1 relative text-dark">Skills<span class="absolute -bottom-2 -right-2 w-[35px] h-[2px] bg-dark rounded-sm"></span></h2>
+      <div class="text-center">
+        <div class="p-4">
+          <h1 class="font-semibold mb-3 text-dark lg:text-xl" data-aos="fade-down" data-aos-duration="700">Technology</h1>
+          <div class="flex justify-center">
+            <img class="lg:w-[60px]" data-aos="fade-left" data-aos-duration="1000" src="/img/skills/html.png" alt="" />
+            <img class="lg:w-[60px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" src="/img/skills/css.png" alt="" />
+            <img class="lg:w-[60px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" src="/img/skills/js.png" alt="" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h1 class="font-semibold mb-3 text-dark lg:text-xl" data-aos="fade-down" data-aos-duration="700" data-aos-delay="400">Framework</h1>
+          <div class="flex justify-center gap-3">
+            <img class="lg:w-[60px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" src="/img/skills/bootstrap.png" alt="" />
+            <img class="lg:w-[60px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800" src="/img/skills/tailwind-css.png" alt="" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h1 class="font-semibold mb-3 text-dark lg:text-xl" data-aos="fade-down" data-aos-duration="700" data-aos-delay="1000">Another</h1>
+          <div class="flex justify-center">
+            <i class="bx bxl-github text-dark text-[45px] lg:text-[70px]" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1200"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Skill -->
+    <!-- Projects -->
+    <div class="p-4 lg:p-8 mt-[150px]" id="projects">
+      <h2 class="text-2xl lg:text-[30px] font-bold mb-[7px] border-b-2 border-primary w-[110px] lg:w-[130px] pb-1 relative text-dark">Projects<span class="absolute -bottom-2 -right-2 w-[35px] h-[2px] bg-dark rounded-sm"></span></h2>
+      <div class="mt-14">
+        <div class="max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden rounded-xl border border-lightNoChange shadow-xl cursor-pointer relative group" data-aos="zoom-in" data-aos-duration="700" data-aos-offset="400">
+          <div class="relative group-hover:blur-sm duration-300">
+            <img src="/img/projects/encaleoz.png" alt="Foto project 1" />
+          </div>
+          <div class="absolute top-0 border text-center mx-auto block">
+            <a href="https://encaleoz.vercel.app/" target="_blank" class="hidden absolute w-[397px] h-[348px] lg:w-[507px] top-0 text-center leading-[200px] group-hover:block group-hover:duration-300">
+              <i class="bx bxs-plane-alt text-2xl lg:text-4xl text-dark"></i>
+              <span class="absolute top-5 lg:top-[110px] block left-[180px] lg:left-[225px] text-dark lg:text-2xl">View</span>
+            </a>
+          </div>
+          <div class="px-4 text-dark">
+            <h1 class="font-semibold text-xl lg:text-2xl mt-1">Class Website</h1>
+            <p class="lg:text-lg">I created this website because our class's Instagram is way too empty, so i store all the memory on this website.</p>
+          </div>
+          <div class="text-3xl mt-3 flex px-4 mb-2 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+              <path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+              <path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path>
+              <path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+              <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+              <path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path>
+              <path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path
+                fill="#7c4dff"
+                d="M7.373,11.443C7.293,9.132,9.094,7,11.529,7h24.946c2.435,0,4.236,2.132,4.155,4.443	c-0.077,2.221,0.023,5.097,0.747,7.443c0.726,2.353,1.951,3.84,3.957,4.031v2.167c-2.006,0.191-3.23,1.678-3.957,4.031	c-0.724,2.345-0.824,5.222-0.747,7.443C40.71,38.868,38.909,41,36.475,41H11.529c-2.434,0-4.236-2.132-4.155-4.443	c0.077-2.221-0.023-5.097-0.747-7.443c-0.726-2.353-1.954-3.84-3.96-4.031v-2.167c2.006-0.191,3.233-1.678,3.96-4.031	C7.35,16.54,7.451,13.664,7.373,11.443z"
+              ></path>
+              <path
+                fill="#fff"
+                d="M27.073,23.464v-0.028c1.853-0.32,3.299-2.057,3.299-3.97c0-1.352-0.52-2.498-1.504-3.312	c-0.981-0.812-2.357-1.241-3.981-1.241H17.45V33.08h7.475c1.942,0,3.555-0.474,4.663-1.372c1.109-0.899,1.696-2.207,1.696-3.783	C31.283,25.544,29.593,23.756,27.073,23.464z M23.59,22.608h-3.181V17.29h3.784c2.076,0,3.219,0.911,3.219,2.565	C27.413,21.63,26.055,22.608,23.59,22.608z M20.409,24.834h3.759c2.716,0,4.092,0.981,4.092,2.916c0,1.932-1.357,2.953-3.925,2.953	h-3.926V24.834z"
+              ></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#f7df1e" d="M6,42V6h36v36H6z"></path>
+              <path
+                fill="#000001"
+                d="M29.538,32.947c0.692,1.124,1.444,2.201,3.037,2.201c1.338,0,2.04-0.665,2.04-1.585 c0-1.101-0.726-1.492-2.198-2.133l-0.807-0.344c-2.329-0.988-3.878-2.226-3.878-4.841c0-2.41,1.845-4.244,4.728-4.244 c2.053,0,3.528,0.711,4.592,2.573l-2.514,1.607c-0.553-0.988-1.151-1.377-2.078-1.377c-0.946,0-1.545,0.597-1.545,1.377 c0,0.964,0.6,1.354,1.985,1.951l0.807,0.344C36.452,29.645,38,30.839,38,33.523C38,36.415,35.716,38,32.65,38 c-2.999,0-4.702-1.505-5.65-3.368L29.538,32.947z M17.952,33.029c0.506,0.906,1.275,1.603,2.381,1.603 c1.058,0,1.667-0.418,1.667-2.043V22h3.333v11.101c0,3.367-1.953,4.899-4.805,4.899c-2.577,0-4.437-1.746-5.195-3.368 L17.952,33.029z"
+              ></path>
+            </svg>
+            <a href="https://github.com/Ocirled/encaleoz" target="_blank" class="absolute right-3 top-[2px]"><i class="bx bxl-github text-dark lg:text-[43px]"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-14">
+        <div class="max-w-[400px] lg:max-w-[500px] mx-auto overflow-hidden rounded-xl border border-lightNoChange shadow-xl cursor-pointer relative group" data-aos="zoom-in" data-aos-duration="700" data-aos-offset="400">
+          <div class="relative group-hover:blur-sm duration-300">
+            <img src="/img/projects/kalkulator.png" alt="Foto project 2" />
+          </div>
+          <div class="absolute top-0 border text-center mx-auto block">
+            <a href="https://ocirled.github.io/Calculator/" target="_blank" class="hidden absolute w-[397px] lg:w-[507px] h-[348px] top-0 text-center leading-[200px] group-hover:block group-hover:duration-300">
+              <i class="bx bxs-plane-alt text-2xl lg:text-4xl text-dark"></i>
+              <span class="absolute top-5 lg:top-[110px] block left-[180px] lg:left-[225px] text-dark lg:text-2xl">View</span>
+            </a>
+          </div>
+          <div class="px-4 text-dark">
+            <h1 class="font-semibold text-xl lg:text-2xl mt-1">Simple Calculator</h1>
+            <p class="lg:text-lg">The purpose of making this is for train my JavaScript, it was a simple calculator.</p>
+          </div>
+          <div class="text-3xl mt-3 flex px-4 mb-2 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+              <path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+              <path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path>
+              <path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+              <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+              <path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path>
+              <path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" class="lg:w-[45px] lg:h-[45px]" viewBox="0 0 48 48">
+              <path fill="#f7df1e" d="M6,42V6h36v36H6z"></path>
+              <path
+                fill="#000001"
+                d="M29.538,32.947c0.692,1.124,1.444,2.201,3.037,2.201c1.338,0,2.04-0.665,2.04-1.585 c0-1.101-0.726-1.492-2.198-2.133l-0.807-0.344c-2.329-0.988-3.878-2.226-3.878-4.841c0-2.41,1.845-4.244,4.728-4.244 c2.053,0,3.528,0.711,4.592,2.573l-2.514,1.607c-0.553-0.988-1.151-1.377-2.078-1.377c-0.946,0-1.545,0.597-1.545,1.377 c0,0.964,0.6,1.354,1.985,1.951l0.807,0.344C36.452,29.645,38,30.839,38,33.523C38,36.415,35.716,38,32.65,38 c-2.999,0-4.702-1.505-5.65-3.368L29.538,32.947z M17.952,33.029c0.506,0.906,1.275,1.603,2.381,1.603 c1.058,0,1.667-0.418,1.667-2.043V22h3.333v11.101c0,3.367-1.953,4.899-4.805,4.899c-2.577,0-4.437-1.746-5.195-3.368 L17.952,33.029z"
+              ></path>
+            </svg>
+            <a href="https://github.com/Ocirled/calculator" target="_blank" class="absolute right-3 top-[2px]"><i class="bx bxl-github text-dark lg:text-[43px]"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Projects -->
+
+    <!-- Footer -->
+    <div class="mt-[100px] bg-light p-4 h-[100px]" id="footer">
+      <div class="flex justify-around items-center h-full">
+        <div class="text-2xl lg:text-[45px] border-r-2 border-primary pr-3 text-dark" data-aos="fade-right" data-aos-duration="1200">eiL</div>
+        <ul class="flex justify-between w-[270px] md:w-[290px] lg:w-[350px] text-dark">
+          <li data-aos="fade-up" data-aos-duration="1200"><a href="#about" class="borderBottom md:text-lg lg:text-xl">About</a></li>
+          <li data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200"><a href="#experience" class="borderBottom md:text-lg lg:text-xl">Experience</a></li>
+          <li data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400"><a href="#skills" class="borderBottom md:text-lg lg:text-xl">Skills</a></li>
+          <li data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600"><a href="#projects" class="borderBottom md:text-lg lg:text-xl">Projects</a></li>
+        </ul>
+      </div>
+      <div class="text-2xl md:text-[26px] lg:text-3xl h-7 text-dark text-center">
+        <a href="https://www.instagram.com/delrico.21?igsh=Y2Q1aGhpYWY0OGNl"> <i class="bx bxl-instagram hover:text-primary duration-300"></i></a>
+        <a href="https://www.linkedin.com/in/delrico-lie-8715b7284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> <i class="bx bxl-linkedin hover:text-primary duration-300"></i></a>
+        <a href="https://www.facebook.com/share/shu8PXSfRn1HgaNk/?mibextid=qi2Omg"> <i class="bx bxl-facebook-circle hover:text-primary duration-300"></i></a>
+      </div>
+    </div>
+    <div class="bg-light p-2 text-center border-dim flex justify-center mt-4"><p class="border-t-2 w-[92%] pt-2 text-dark md:text-lg lg:text-xl">Made with ❤️ by Delrico</p></div>
+    <!-- End of Footer -->
+  </body>
+  <!-- Parallax js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"
+    integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <!-- Swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- js -->
+  <script src="/public/main.js"></script>
+
+  <!-- Boxicons -->
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>
